@@ -1,0 +1,30 @@
+{
+  "name": "trellis-practice",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter @trellis-practice/api --filter @trellis-practice/web dev",
+    "dev:web": "pnpm --filter @trellis-practice/web dev",
+    "dev:api": "pnpm --filter @trellis-practice/api dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check",
+    "test": "pnpm -r test",
+    "db:migrate": "pnpm --filter @trellis-practice/api db:migrate",
+    "db:seed": "pnpm --filter @trellis-practice/api db:seed",
+    "db:reset": "pnpm --filter @trellis-practice/api db:reset"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@types/node": "latest",
+    "eslint": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vitest": "latest"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["better-sqlite3", "esbuild"]
+  }
+}
